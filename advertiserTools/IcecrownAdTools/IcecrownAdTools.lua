@@ -269,7 +269,7 @@ function IcecrownAdTools:SetupOptions()
             },
             author = {
                 type = "description",
-                name = "\n|cffffd100Author: |r Honorax @ Illidan-US",
+                name = "\n|cffffd100Author: |r Dajn @ Tarren Mill",
                 order = 2
             },
             version = {
