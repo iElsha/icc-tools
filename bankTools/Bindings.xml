@@ -1,0 +1,4 @@
+<Bindings>
+    <Binding name="MACRO MyMount" runOnUp="false" category="Tolls Tools" default="F1">  
+  	</Binding>
+</Bindings>

@@ -1,0 +1,9 @@
+## Interface: 80205
+## Title: ICCTools
+## Author: Nnoggie
+## Version: 3
+## Notes: ICCTools (TollsTools modified by Tomitaka for Icecrown Community)
+## SavedVariables: ICCToolsDB
+
+libs\load_libs.xml
+ICCTools.lua
