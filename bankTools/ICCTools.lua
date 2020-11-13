@@ -1,696 +1,672 @@
 local AddonName, TT = ...
 
 local realmToNameHorde = {
-    --
-        ["Aegwynn"] = "TheProHordi-Aegwynn",
-    --
-        ["AeriePeak"] = "TheProHordi-AeriePeak",
-        ["Bronzebeard"] = "TheProHordi-AeriePeak",
-    --
-        ["Agamaggan"] = "TheProHordi-Agamaggan",
-        ["Emeriss"] = "TheProHordi-Agamaggan",
-        ["Twilight'sHammer"] = "TheProHordi-Agamaggan",
-        ["Bloodscalp"] = "TheProHordi-Agamaggan",
-        ["Crushridge"] = "TheProHordi-Agamaggan",
-        ["Hakkar"] = "TheProHordi-Agamaggan",
-    --
-        ["Aggramar"] = "TheProHordi-Aggramar",
-        ["Hellscream"] = "TheProHordi-Aggramar",
-    --
-        ["Alexstrasza"] = "TheProHordi-Alexstrasza",
-        ["Nethersturm"] = "TheProHordi-Alexstrasza",
-    --
-        ["Alleria"] = "TheProHordi-Alleria",
-        ["Rexxar"] = "TheProHordi-Alleria",
-    --
-        ["Alonsus"] = "TheProHordi-Alonsus",
-        ["KulTiras"] = "TheProHordi-Alonsus",
-        ["Anachronos"] = "TheProHordi-Alonsus",
-    --
-        ["Aman'thul"] = "TheProHordi-Aman'thul",
-    --
-        ["Antonidas"] = "TheProHordi-Antonidas",
-    --
-        ["Anub'arak"] = "TheProHordi-Anub'arak",
-        ["Zuluhed"] = "TheProHordi-Anub'arak",
-        ["Nazjatar"] = "TheProHordi-Anub'arak",
-        ["Dalvengyr"] = "TheProHordi-Anub'arak",
-        ["Frostmourne"] = "TheProHordi-Anub'arak",
-    --    
-        ["Arathi"] = "TheProHordi-Arathi",
-        ["Templenoir"] = "TheProHordi-Arathi",
-        ["Illidan"] = "TheProHordi-Arathi",
-        ["Naxxramas"] = "TheProHordi-Arathi",
-    --
-        ["Arathor"] = "TheProHordi-Arathor",
-        ["Hellfire"] = "TheProHordi-Arathor",
-    --
-        ["Archimonde"] = "TheProHordi-Archimonde",
-    --
-        ["Area52"] = "TheProHordi-Area52",
-        ["Sen'jin"] = "TheProHordi-Area52",
-        ["Un'Goro"] = "TheProHordi-Area52",
-    --
-        ["ArgentDawn"] = "TheProHordi-ArgentDawn",
-    --
-        ["Arthas"] = "TheProHordi-Arthas",
-        ["Vek'lor"] = "TheProHordi-Arthas",
-        ["Kel'Thuzad"] = "TheProHordi-Arthas",
-        ["Wrathbringer"] = "TheProHordi-Arthas",
-        ["Blutkessel"] = "TheProHordi-Arthas",
-    --    
-        ["Aszune"] = "TheProHordi-Aszune",
-        ["Shadowsong"] = "TheProHordi-Aszune",
-    --
-        ["Auchindoun"] = "TheProHordi-Auchindoun",
-        ["Jaedenar"] = "TheProHordi-Auchindoun",
-        ["Dunemaul"] = "TheProHordi-Auchindoun",
-    --
-        ["Azshara"] = "TheProHordi-Azshara",
-        ["Krag'jin"] = "TheProHordi-Azshara",
-    --
-        ["Baelgun"] = "TheProHordi-Baelgun",
-        ["Lothar"] = "TheProHordi-Baelgun",
-    --
-        ["Balnazzar"] = "TheProHordi-Balnazzar",
-        ["Boulderfist"] = "TheProHordi-Balnazzar",
-        ["Trollbane"] = "TheProHordi-Balnazzar",
-        ["LaughingSkull"] = "TheProHordi-Balnazzar",
-        ["Daggerspine"] = "TheProHordi-Balnazzar",
-        ["Ahn'Qiraj"] = "TheProHordi-Balnazzar",
-        ["Talnivarr"] = "TheProHordi-Balnazzar",
-        ["ShatteredHalls"] = "TheProHordi-Balnazzar",
-        ["Sunstrider"] = "TheProHordi-Balnazzar",
-        ["Chromaggus"] = "TheProHordi-Balnazzar",
-    --
-        ["Blackhand"] = "TheProHordi-Blackhand",
-    --
-        ["Blackmoore"] = "TheProHordi-Blackmoore",
-    --
-        ["Blackrock"] = "TheProHordi-Blackrock",
-    --
-        ["Blade'sEdge"] = "TheProHordi-Blade'sEdge",
-        ["Vek'nilash"] = "TheProHordi-Blade'sEdge",
-        ["Eonar"] = "TheProHordi-Blade'sEdge",
-    --
-        ["Bloodfeather"] = "TheProHordi-Bloodfeather",
-        ["BurningSteppes"] = "TheProHordi-Bloodfeather",
-        ["ShatteredHand"] = "TheProHordi-Bloodfeather",
-        ["Kor'gall"] = "TheProHordi-Bloodfeather",
-        ["Executus"] = "TheProHordi-Bloodfeather",
-    --
-        ["BurningLegion"] = "TheProHordi-BurningLegion",
-    --
-        ["ChamberofAspects"] = "TheProHordi-ChamberofAspects",
-    --
-        ["ConseildesOmbres"] = "TheProHordi-ConseildesOmbres",
-        ["CultedelaRivenoire"] = "TheProHordi-ConseildesOmbres",
-        ["LaCroisadeécarlate"] = "TheProHordi-ConseildesOmbres",
-    --
-        ["C'Thun"] = "TheProHordi-C'Thun",
-    --
-        ["Dalaran"] = "TheProHordi-Dalaran",
-        ["MarécagedeZangar"] = "TheProHordi-Dalaran",
-    --
-        ["DarkmoonFaire"] = "TheProHordi-DarkmoonFaire",
-        ["EarthenRing"] = "TheProHordi-DarkmoonFaire",
-    --
-        ["Darksorrow"] = "TheProHordi-Darksorrow",
-        ["Neptulon"] = "TheProHordi-Darksorrow",
-        ["Genjuros"] = "TheProHordi-Darksorrow",
-    --
-        ["Darkspear"] = "TheProHordi-Darkspear",
-        ["Saurfang"] = "TheProHordi-Darkspear",
-        ["Terokkar"] = "TheProHordi-Darkspear",
-    --
-        ["DasKonsortium"] = "TheProHordi-DasKonsortium",
-        ["KultderVerdammten"] = "TheProHordi-DasKonsortium",
-        ["DieTodeskrallen"] = "TheProHordi-DasKonsortium",
-        ["DieArguswacht"] = "TheProHordi-DasKonsortium",
-        ["DerabyssischeRat"] = "TheProHordi-DasKonsortium",
-        ["DasSyndikat"] = "TheProHordi-DasKonsortium",
-    --
-        ["Deathwing"] = "TheProHordi-Deathwing",
-        ["TheMaelstrom"] = "TheProHordi-Deathwing",
-        ["Lightning'sBlade"] = "TheProHordi-Deathwing",
-        ["Karazhan"] = "TheProHordi-Deathwing",
-    --
-        ["DefiasBrotherhood"] = "TheProHordi-DefiasBrotherhood",
-        ["TheVentureCo"] = "TheProHordi-DefiasBrotherhood",
-        ["Sporeggar"] = "TheProHordi-DefiasBrotherhood",
-        ["ScarshieldLegion"] = "TheProHordi-DefiasBrotherhood",
-        ["Ravenholdt"] = "TheProHordi-DefiasBrotherhood",
-    --
-        ["DerMithrilorden"] = "TheProHordi-DerMithrilorden",
-        ["DerRatvonDalaran"] = "TheProHordi-DerMithrilorden",
-    --
-        ["Destromath"] = "TheProHordi-Destromath",
-        ["Nera'thor"] = "TheProHordi-Destromath",
-        ["Nefarian"] = "TheProHordi-Destromath",
-        ["Mannoroth"] = "TheProHordi-Destromath",
-        ["Gorgonnash"] = "TheProHordi-Destromath",
-    --
-        ["DieAldor"] = "TheProHordi-DieAldor",
-    --
-        ["DieNachtwache"] = "TheProHordi-DieNachtwache",
-        ["Forscherliga"] = "TheProHordi-DieNachtwache",
-    --
-        ["DieSilberneHand"] = "TheProHordi-DieSilberneHand",
-        ["DieewigeWacht"] = "TheProHordi-DieSilberneHand",
-    --
-        ["Doomhammer"] = "TheProHordi-Doomhammer",
-        ["Turalyon"] = "TheProHordi-Doomhammer",
-    --
-        ["Draenor"] = "TheProHordi-Draenor",
-    --
-        ["Dragonblight"] = "TheProHordi-Dragonblight",
-        ["Ghostlands"] = "TheProHordi-Dragonblight",
-    --
-        ["Drak'thul"] = "TheProHordi-Drak'thul",
-        ["BurningBlade"] = "TheProHordi-Drak'thul",
-    --
-        ["Drek'Thar"] = "TheProHordi-Drek'Thar",
-        ["Uldaman"] = "TheProHordi-Drek'Thar",
-    --
-        ["DunModr"] = "TheProHordi-DunModr",
-    --
-        ["DunMorogh"] = "TheProHordi-DunMorogh",
-        ["Norgannon"] = "TheProHordi-DunMorogh",
-    --
-        ["Durotan"] = "TheProHordi-Durotan",
-        ["Tirion"] = "TheProHordi-Durotan",
-    --
-        ["Eitrigg"] = "TheProHordi-Eitrigg",
-        ["Krasus"] = "TheProHordi-Eitrigg",
-    --
-        ["Elune"] = "TheProHordiixh-Elune",
-        ["Varimathras"] = "TheProHordi-Elune",
-    --
-        ["EmeraldDream"] = "TheProHordi-EmeraldDream",
-        ["Terenas"] = "TheProHordi-EmeraldDream",
-    --
-        ["Eredar"] = "TheProHordi-Eredar",
-    --
-        ["Exodar"] = "TheProHordi-Exodar",
-        ["Minahonda"] = "TheProHordi-Exodar",
-    --
-        ["Frostmane"] = "TheProHordi-Frostmane",
-    --
-        ["Frostwolf"] = "TheProHordi-Frostwolf",
-    --
-        ["Gilneas"] = "TheProHordi-Gilneas",
-        ["Ulduar"] = "TheProHordi-Gilneas",
-    --
-        ["GrimBatol"] = "TheProHordi-GrimBatol",
-        ["Aggra(Português)"] = "TheProHordi-GrimBatol",
-    --
-        ["Hyjal"] = "TheProHordi-Hyjal",
-    --
-        ["Kargath"] = "TheProHordi-Kargath",
-        ["Ambossar"] = "TheProHordi-Kargath",
-    --
-        ["Kazzak"] = "TheProHordi-Kazzak",
-    --
-        ["Khadgar"] = "TheProHordi-Khadgar",
-        ["Bloodhoof"] = "TheProHordi-Khadgar",
-    --
-        ["Khaz'goroth"] = "TheProHordi-Khaz'goroth",
-        ["Arygos"] = "TheProHordi-Khaz'goroth",
-    --
-        ["KhazModan"] = "TheProHordi-KhazModan",
-    --
-        ["KirinTor"] = "TheProHordi-KirinTor",
-    --
-        ["LesClairvoyants"] = "TheProHordi-LesClairvoyants",
-        ["LesSentinelles"] = "TheProHordi-LesClairvoyants",
-        ["ConfrérieduThorium"] = "TheProHordi-LesClairvoyants",
-    --
-        ["Lightbringer"] = "TheProHordi-Lightbringer",
-        ["Mazrigos"] = "TheProHordi-Lightbringer",
-    --
-        ["Lordaeron"] = "TheProHordi-Lordaeron",
-        ["Tichondrius"] = "TheProHordi-Lordaeron",
-    --
-        ["Madmortem"] = "TheProHordi-Madmortem",
-        ["Proudmoore"] = "TheProHordi-Madmortem",
-    --
-        ["Magtheridon"] = "TheProHordi-Magtheridon",
-    --
-        ["Malfurion"] = "TheProHordi-Malfurion",
-        ["Malygos"] = "TheProHordi-Malfurion",
-    --
-        ["Mal'Ganis"] = "TheProHordi-Mal'Ganis",
-        ["Taerar"] = "TheProHordi-Mal'Ganis",
-        ["Echsenkessel"] = "TheProHordi-Mal'Ganis",
-    --
-        ["Malorne"] = "TheProHordi-Malorne",
-        ["Ysera"] = "TheProHordi-Malorne",
-    --
-        ["Medivh"] = "TheProHordi-Medivh",
-        ["Suramar"] = "TheProHordi-Medivh",
-    --
-        ["Moonglade"] = "TheProHordi-Moonglade",
-        ["TheSha'tar"] = "TheProHordi-Moonglade",
-        ["SteamwheedleCartel"] = "TheProHordi-Moonglade",
-    --
-        ["Nagrand"] = "TheProHordi-Nagrand",
-        ["Runetotem"] = "TheProHordi-Nagrand",
-        ["Kilrogg"] = "TheProHordi-Nagrand",
-    --
-        ["Nathrezim"] = "TheProHordi-Nathrezim",
-        ["Anetheron"] = "TheProHordi-Nathrezim",
-        ["FestungderStürme"] = "TheProHordi-Nathrezim",
-        ["Gul'dan"] = "TheProHordi-Nathrezim",
-        ["Kil'jaeden"] = "TheProHordi-Nathrezim",
-        ["Rajaxx"] = "TheProHordi-Nathrezim",
-    --
-        ["Nemesis"] = "TheProHordi-Nemesis",
-    --
-        ["Nordrassil"] = "TheProHordi-Nordrassil",
-        ["BronzeDragonflight"] = "TheProHordi-Nordrassil",
-    --
-        ["Nozdormu"] = "TheProHordi-Nozdormu",
-        ["Shattrath"] = "TheProHordi-Nozdormu",
-        ["Garrosh"] = "TheProHordi-Nozdormu",
-    --
-        ["Onyxia"] = "TheProHordi-Onyxia",
-        ["Terrordar"] = "TheProHordi-Onyxia",
-        ["Theradras"] = "TheProHordi-Onyxia",
-        ["Mug'thol"] = "TheProHordi-Onyxia",
-        ["Dethecus"] = "TheProHordi-Onyxia",
-    --
-        ["Outland"] = "TheProHordi-Outland",
-    --
-        ["Perenolde"] = "TheProHordi-Perenolde",
-        ["Teldrassil"] = "TheProHordi-Perenolde",
-    --
-        ["Pozzodell'Eternità"] = "TheProHordi-Pozzodell'Eternità",
-    --
-        ["Quel'Thalas"] = "TheProHordi-Quel'Thalas",
-        ["AzjolNerub"] = "TheProHordi-Quel'Thalas",
-    --
-        ["Ragnaros"] = "TheProHordi-Ragnaros",
-    --
-        ["Rashgarroth"] = "TheProHordi-Rashgarroth",
-        ["Arakarahm"] = "TheProHordi-Rashgarroth",
-        ["Kael'thas"] = "TheProHordi-Rashgarroth",
-        ["Throk'Feroth"] = "TheProHordi-Rashgarroth",
-    --
-        ["Ravencrest"] = "TheProHordi-Ravencrest",
-    --
-        ["Sanguino"] = "TheProHordi-Sanguino",
-        ["Zul'jin"] = "TheProHordi-Sanguino",
-        ["Uldum"] = "TheProHordi-Sanguino",
-        ["Shen'dralar"] = "TheProHordi-Sanguino",
-    --
-        ["Sargeras"] = "TheProHordi-Sargeras",
-        ["Ner'zhul"] = "TheProHordi-Sargeras",
-        ["Garona"] = "TheProHordi-Sargeras",
-    --
-        ["Silvermoon"] = "TheProHordi-Silvermoon",
-    --
-        ["Sinstralis"] = "TheProHordi-Sinstralis",
-        ["Eldre'Thalas"] = "TheProHordi-Sinstralis",
-        ["Cho'gall"] = "TheProHordi-Sinstralis",
-    --
-        ["Stormrage"] = "TheProHordi-Stormrage",
-        ["Azuremyst"] = "TheProHordi-Stormrage",
-    --
-        ["Stormreaver"] = "TheProHordi-Stormreaver",
-        ["Vashj"] = "TheProHordi-Stormreaver",
-        ["Spinebreaker"] = "TheProHordi-Stormreaver",
-        ["Haomarush"] = "TheProHordi-Stormreaver",
-        ["Dragonmaw"] = "TheProHordi-Stormreaver",
-    --
-        ["Stormscale"] = "TheProHordi-Stormscale",
-    --
-        ["Sylvanas"] = "TheProHordi-Sylvanas",
-    --
-        ["TarrenMill"] = "TheProHordi-TarrenMill",
-        ["Dentarg"] = "TheProHordi-TarrenMill",   
-    --
-        ["Thrall"] = "TheProHordi-Thrall",
-    --
-        ["TwistingNether"] = "TheProHordi-TwistingNether",
-    --
-        ["Tyrande"] = "TheProHordi-Tyrande",
-        ["LosErrantes"] = "TheProHordi-Tyrande",
-        ["ColinasPardas"] = "TheProHordi-Tyrande",
-    --
-        ["Vol'jin"] = "TheProHordi-Vol'jin",
-        ["Chantséternels"] = "TheProHordi-Vol'jin",
-    --
-        ["Wildhammer"] = "TheProHordi-Wildhammer",
-        ["Thunderhorn"] = "TheProHordi-Wildhammer",
-    --
-        ["Xavius"] = "TheProHordi-Xavius",
-        ["Al'Akir"] = "TheProHordi-Xavius",
-        ["Skullcrusher"] = "TheProHordi-Xavius",
-    --
-        ["Ysondre"] = "TheProHordi-Ysondre",
-    --
-        ["Zenedar"] = "TheProHordi-Zenedar",
-        ["Bladefist"] = "TheProHordi-Zenedar",
-        ["Frostwhisper"] = "TheProHordi-Zenedar",
-    --
-        ["ZirkeldesCenarius"] = "TheProHordi-ZirkeldesCenarius",
-        ["Todeswache"] = "TheProHordi-ZirkeldesCenarius",
-    --
-        ["Anasterian"] = "CharName-Realm",--ptr
+        ["Aegwynn"] = "Iccbh-Aegwynn",
+
+        ["AeriePeak"] = "Iccbh-AeriePeak",
+        ["Bronzebeard"] = "Iccbh-AeriePeak",
+        ["Blade'sEdge"] = "Iccbh-AeriePeak",
+        ["Vek'nilash"] = "Iccbh-AeriePeak",
+        ["Eonar"] = "Iccbh-AeriePeak",
+    
+        ["Agamaggan"] = "Iccbh-Agamaggan",
+        ["Emeriss"] = "Iccbh-Agamaggan",
+        ["Twilight'sHammer"] = "Iccbh-Agamaggan",
+        ["Bloodscalp"] = "Iccbh-Agamaggan",
+        ["Crushridge"] = "Iccbh-Agamaggan",
+        ["Hakkar"] = "Iccbh-Agamaggan",
+
+        ["Aggramar"] = "Iccbh-Aggramar",
+        ["Hellscream"] = "Iccbh-Aggramar",
+
+        ["Alexstrasza"] = "Iccbh-Alexstrasza",
+        ["Nethersturm"] = "Iccbh-Alexstrasza",
+        ["Madmortem"] = "Iccbh-Alexstrasza",
+        ["Proudmoore"] = "Iccbh-Alexstrasza",
+
+        ["Alleria"] = "Iccbh-Alleria",
+        ["Rexxar"] = "Iccbh-Alleria",
+    
+        ["Alonsus"] = "Iccbh-Alonsus",
+        ["KulTiras"] = "Iccbh-Alonsus",
+        ["Anachronos"] = "Iccbh-Alonsus",
+
+        ["Aman'thul"] = "Iccbh-Aman'thul",
+        ["Anub'arak"] = "Iccbh-Aman'thul",
+        ["Zuluhed"] = "Iccbh-Aman'thul",
+        ["Nazjatar"] = "Iccbh-Aman'thul",
+        ["Dalvengyr"] = "Iccbh-Aman'thul",
+        ["Frostmourne"] = "Iccbh-Aman'thul",
+    
+        ["Antonidas"] = "Iccbh-Antonidas",
+
+        ["Arathi"] = "Iccbh-Arathi",
+        ["Templenoir"] = "Iccbh-Arathi",
+        ["Illidan"] = "Iccbh-Arathi",
+        ["Naxxramas"] = "Iccbh-Arathi",
+
+        ["Archimonde"] = "Iccbh-Archimonde",
+
+        ["Area52"] = "Iccbh-Area52",
+        ["Sen'jin"] = "Iccbh-Area52",
+        ["Un'Goro"] = "Iccbh-Area52",
+    
+        ["Nagrand"] = "Iccbh-Nagrand",
+        ["Runetotem"] = "Iccbh-Nagrand",
+        ["Kilrogg"] = "Iccbh-Nagrand",
+        ["Arathor"] = "Iccbh-Nagrand",
+        ["Hellfire"] = "Iccbh-Nagrand",
+    
+        ["ArgentDawn"] = "Iccbh-ArgentDawn",
+
+        ["Arthas"] = "Iccbh-Arthas",
+        ["Vek'lor"] = "Iccbh-Arthas",
+        ["Kel'Thuzad"] = "Iccbh-Arthas",
+        ["Wrathbringer"] = "Iccbh-Arthas",
+        ["Blutkessel"] = "Iccbh-Arthas",
+        ["Durotan"] = "Iccbh-Arthas",
+        ["Tirion"] = "Iccbh-Arthas",
+    
+        ["Aszune"] = "Iccbh-Aszune",
+        ["Shadowsong"] = "Iccbh-Aszune",
+
+        ["Baelgun"] = "Iccbh-Baelgun",
+        ["Lothar"] = "Iccbh-Baelgun",
+        ["Azshara"] = "Iccbh-Baelgun",
+        ["Krag'jin"] = "Iccbh-Baelgun",
+
+        ["Balnazzar"] = "Iccbh-Balnazzar",
+        ["Boulderfist"] = "Iccbh-Balnazzar",
+        ["Trollbane"] = "Iccbh-Balnazzar",
+        ["LaughingSkull"] = "Iccbh-Balnazzar",
+        ["Daggerspine"] = "Iccbh-Balnazzar",
+        ["Ahn'Qiraj"] = "Iccbh-Balnazzar",
+        ["Talnivarr"] = "Iccbh-Balnazzar",
+        ["ShatteredHalls"] = "Iccbh-Balnazzar",
+        ["Sunstrider"] = "Iccbh-Balnazzar",
+        ["Chromaggus"] = "Iccbh-Balnazzar",
+    
+        ["Blackhand"] = "Iccbh-Blackhand",
+        ["Mal'Ganis"] = "Iccbh-Blackhand",
+        ["Taerar"] = "Iccbh-Blackhand",
+        ["Echsenkessel"] = "Iccbh-Blackhand",
+
+        ["Blackmoore"] = "Iccbh-Blackmoore",
+        ["Lordaeron"] = "Iccbh-Blackmoore",
+        ["Tichondrius"] = "Iccbh-Blackmoore",
+
+        ["Blackrock"] = "Iccbh-Blackrock",
+
+        ["Bloodfeather"] = "Iccbh-Bloodfeather",
+        ["BurningSteppes"] = "Iccbh-Bloodfeather",
+        ["ShatteredHand"] = "Iccbh-Bloodfeather",
+        ["Kor'gall"] = "Iccbh-Bloodfeather",
+        ["Executus"] = "Iccbh-Bloodfeather",
+        ["Darkspear"] = "Iccbh-Bloodfeather",
+        ["Saurfang"] = "Iccbh-Bloodfeather",
+        ["Terokkar"] = "Iccbh-Bloodfeather",
+
+        ["BurningLegion"] = "Iccbh-BurningLegion",
+        ["Xavius"] = "Iccbh-BurningLegion",
+        ["Al'Akir"] = "Iccbh-BurningLegion",
+        ["Skullcrusher"] = "Iccbh-BurningLegion",
+
+        ["ChamberofAspects"] = "Iccbh-ChamberofAspects",
+
+        ["Dalaran"] = "Iccbh-Dalaran",
+        ["MarécagedeZangar"] = "Iccbh-Dalaran",
+        ["Sinstralis"] = "Iccbh-Dalaran",
+        ["Eldre'Thalas"] = "Iccbh-Dalaran",
+        ["Cho'gall"] = "Iccbh-Dalaran",
+
+        ["DasKonsortium"] = "Iccbh-DasKonsortium",
+        ["KultderVerdammten"] = "Iccbh-DasKonsortium",
+        ["DieTodeskrallen"] = "Iccbh-DasKonsortium",
+        ["DieArguswacht"] = "Iccbh-DasKonsortium",
+        ["DerabyssischeRat"] = "Iccbh-DasKonsortium",
+        ["DasSyndikat"] = "Iccbh-DasKonsortium",
+        ["DieSilberneHand"] = "Iccbh-DasKonsortium",
+        ["DieewigeWacht"] = "Iccbh-DasKonsortium",
+
+        ["Deathwing"] = "Iccbh-Deathwing",
+        ["TheMaelstrom"] = "Iccbh-Deathwing",
+        ["Lightning'sBlade"] = "Iccbh-Deathwing",
+        ["Karazhan"] = "Iccbh-Deathwing",
+        ["Dragonblight"] = "Iccbh-Deathwing",
+        ["Ghostlands"] = "Iccbh-Deathwing",
+
+        ["DefiasBrotherhood"] = "Iccbh-DefiasBrotherhood",
+        ["TheVentureCo"] = "Iccbh-DefiasBrotherhood",
+        ["Sporeggar"] = "Iccbh-DefiasBrotherhood",
+        ["ScarshieldLegion"] = "Iccbh-DefiasBrotherhood",
+        ["Ravenholdt"] = "Iccbh-DefiasBrotherhood",
+        ["DarkmoonFaire"] = "Iccbh-DefiasBrotherhood",
+        ["EarthenRing"] = "Iccbh-DefiasBrotherhood",
+
+        ["Destromath"] = "Iccbh-Destromath",
+        ["Nera'thor"] = "Iccbh-Destromath",
+        ["Nefarian"] = "Iccbh-Destromath",
+        ["Mannoroth"] = "Iccbh-Destromath",
+        ["Gorgonnash"] = "Iccbh-Destromath",
+        ["Gilneas"] = "Iccbh-Destromath",
+        ["Ulduar"] = "Iccbh-Destromath",
+
+        ["DieAldor"] = "Iccbh-DieAldor",
+
+        ["DieNachtwache"] = "Iccbh-DieNachtwache",
+        ["Forscherliga"] = "Iccbh-DieNachtwache",
+        ["ZirkeldesCenarius"] = "Iccbh-DieNachtwache",
+        ["Todeswache"] = "Iccbh-DieNachtwache",
+        ["DerMithrilorden"] = "Iccbh-DieNachtwache",
+        ["DerRatvonDalaran"] = "Iccbh-DieNachtwache",
+
+        ["Doomhammer"] = "Iccbh-Doomhammer",
+        ["Turalyon"] = "Iccbh-Doomhammer",
+
+        ["Draenor"] = "Iccbh-Draenor",
+
+        ["Drak'thul"] = "Iccbh-Drak'thul",
+        ["BurningBlade"] = "Iccbh-Drak'thul",
+
+        ["Drek'Thar"] = "Iccbh-Drek'Thar",
+        ["Uldaman"] = "Iccbh-Drek'Thar",
+        ["Eitrigg"] = "Iccbh-Drek'Thar",
+        ["Krasus"] = "Iccbh-Drek'Thar",
+
+        ["DunModr"] = "Iccbh-DunModr",
+        ["C'Thun"] = "Iccbh-DunModr",
+
+        ["DunMorogh"] = "Iccbh-DunMorogh",
+        ["Norgannon"] = "Iccbh-DunMorogh",
+
+        ["Elune"] = "Iccbh-Elune",
+        ["Varimathras"] = "Iccbh-Elune",
+
+        ["EmeraldDream"] = "Iccbh-EmeraldDream",
+        ["Terenas"] = "Iccbh-EmeraldDream",
+
+        ["Eredar"] = "Iccbh-Eredar",
+
+        ["Exodar"] = "Iccbh-Exodar",
+        ["Minahonda"] = "Iccbh-Exodar",
+
+        ["Frostwolf"] = "Iccbh-Frostwolf",
+
+        ["GrimBatol"] = "Iccbh-GrimBatol",
+        ["Aggra(Português)"] = "Iccbh-GrimBatol",
+        ["Frostmane"] = "Iccbh-GrimBatol",
+
+
+        ["Hyjal"] = "Iccbh-Hyjal",
+
+        ["Kazzak"] = "Iccbh-Kazzak",
+
+        ["Khadgar"] = "Iccbh-Khadgar",
+        ["Bloodhoof"] = "Iccbh-Khadgar",
+
+        ["Khaz'goroth"] = "Iccbh-Khaz'goroth",
+        ["Arygos"] = "Iccbh-Khaz'goroth",
+
+        ["KhazModan"] = "Iccbh-KhazModan",
+
+        ["KirinTor"] = "Iccbh-KirinTor",
+        ["ConseildesOmbres"] = "Iccbh-KirinTor",
+        ["CultedelaRivenoire"] = "Iccbh-KirinTor",
+        ["LaCroisadeécarlate"] = "Iccbh-KirinTor",
+        ["LesClairvoyants"] = "Iccbh-KirinTor",
+        ["LesSentinelles"] = "Iccbh-KirinTor",
+        ["ConfrérieduThorium"] = "Iccbh-KirinTor",
+
+        ["Lightbringer"] = "Iccbh-Lightbringer",
+        ["Mazrigos"] = "Iccbh-Lightbringer",
+
+        ["Magtheridon"] = "Iccbh-Magtheridon",
+
+        ["Malfurion"] = "Iccbh-Malfurion",
+        ["Malygos"] = "Iccbh-Malfurion",
+
+        ["Malorne"] = "Iccbh-Malorne",
+        ["Ysera"] = "Iccbh-Malorne",
+
+        ["Medivh"] = "Iccbh-Medivh",
+        ["Suramar"] = "Iccbh-Medivh",
+
+        ["Moonglade"] = "Iccbh-Moonglade",
+        ["TheSha'tar"] = "Iccbh-Moonglade",
+        ["SteamwheedleCartel"] = "Iccbh-Moonglade",
+
+        ["Nathrezim"] = "Iccbh-Nathrezim",
+        ["Anetheron"] = "Iccbh-Nathrezim",
+        ["FestungderStürme"] = "Iccbh-Nathrezim",
+        ["Gul'dan"] = "Iccbh-Nathrezim",
+        ["Kil'jaeden"] = "Iccbh-Nathrezim",
+        ["Rajaxx"] = "Iccbh-Nathrezim",
+
+        ["Nemesis"] = "Iccbh-Nemesis",
+
+        ["Nordrassil"] = "Iccbh-Nordrassil",
+        ["BronzeDragonflight"] = "Iccbh-Nordrassil",
+
+        ["Onyxia"] = "Iccbh-Onyxia",
+        ["Terrordar"] = "Iccbh-Onyxia",
+        ["Theradras"] = "Iccbh-Onyxia",
+        ["Mug'thol"] = "Iccbh-Onyxia",
+        ["Dethecus"] = "Iccbh-Onyxia",
+
+        ["Outland"] = "Iccbh-Outland",
+
+        ["Perenolde"] = "Iccbh-Perenolde",
+        ["Teldrassil"] = "Iccbh-Perenolde",
+        ["Nozdormu"] = "Iccbh-Nozdormu",
+        ["Shattrath"] = "Iccbh-Nozdormu",
+        ["Garrosh"] = "Iccbh-Nozdormu",
+
+        ["Pozzodell'Eternità"] = "Iccbh-Pozzodell'Eternità",
+
+        ["Quel'Thalas"] = "Iccbh-Quel'Thalas",
+        ["AzjolNerub"] = "Iccbh-Quel'Thalas",
+
+        ["Ragnaros"] = "Iccbh-Ragnaros",
+
+        ["Rashgarroth"] = "Iccbh-Rashgarroth",
+        ["Arakarahm"] = "Iccbh-Rashgarroth",
+        ["Kael'thas"] = "Iccbh-Rashgarroth",
+        ["Throk'Feroth"] = "Iccbh-Rashgarroth",
+
+        ["Ravencrest"] = "Iccbh-Ravencrest",
+
+        ["Sanguino"] = "Iccbh-Sanguino",
+        ["Zul'jin"] = "Iccbh-Sanguino",
+        ["Uldum"] = "Iccbh-Sanguino",
+        ["Shen'dralar"] = "Iccbh-Sanguino",
+
+        ["Sargeras"] = "Iccbh-Sargeras",
+        ["Ner'zhul"] = "Iccbh-Sargeras",
+        ["Garona"] = "Iccbh-Sargeras",
+
+        ["Silvermoon"] = "Iccbh-Silvermoon",
+
+        ["Stormrage"] = "Iccbh-Stormrage",
+        ["Azuremyst"] = "Iccbh-Stormrage",
+
+        ["Stormreaver"] = "Iccbh-Stormreaver",
+        ["Vashj"] = "Iccbh-Stormreaver",
+        ["Spinebreaker"] = "Iccbh-Stormreaver",
+        ["Haomarush"] = "Iccbh-Stormreaver",
+        ["Dragonmaw"] = "Iccbh-Stormreaver",
+
+        ["Stormscale"] = "Iccbh-Stormscale",
+
+        ["Sylvanas"] = "Iccbh-Sylvanas",
+        ["Auchindoun"] = "Iccbh-Sylvanas",
+        ["Jaedenar"] = "Iccbh-Sylvanas",
+        ["Dunemaul"] = "Iccbh-Sylvanas",
+
+        ["TarrenMill"] = "Iccbh-TarrenMill",
+        ["Dentarg"] = "Iccbh-TarrenMill",   
+
+        ["Thrall"] = "Iccbh-Thrall",
+        ["Kargath"] = "Iccbh-Thrall",
+        ["Ambossar"] = "Iccbh-Thrall",
+
+        ["TwistingNether"] = "Iccbh-TwistingNether",
+
+        ["Tyrande"] = "Iccbh-Tyrande",
+        ["LosErrantes"] = "Iccbh-Tyrande",
+        ["ColinasPardas"] = "Iccbh-Tyrande",
+
+        ["Vol'jin"] = "Iccbh-Vol'jin",
+        ["Chantséternels"] = "Iccbh-Vol'jin",
+
+        ["Wildhammer"] = "Iccbh-Wildhammer",
+        ["Thunderhorn"] = "Iccbh-Wildhammer",
+
+        ["Ysondre"] = "Iccbh-Ysondre",
+
+        ["Zenedar"] = "Iccbh-Zenedar",
+        ["Darksorrow"] = "Iccbh-Zenedar",
+        ["Neptulon"] = "Iccbh-Zenedar",
+        ["Genjuros"] = "Iccbh-Zenedar",
+        ["Bladefist"] = "Iccbh-Zenedar",
+        ["Frostwhisper"] = "Iccbh-Zenedar", 
+
+        ["Anasterian"] = "DO NOT USE",--ptr
 }
 
 local realmToNameAlliance = {
-    ["Arathi"] = "Proalibank-Arathi",
-    ["Templenoir"] = "Proalibank-Arathi",
-    ["Naxxramas"] = "Proalibank-Arathi",
-    ["Illidan"] = "Proalibank-Arathi",
+    ["Aegwynn"] = "Iccba-Aegwynn",
+
+    ["AeriePeak"] = "Iccba-AeriePeak",
+    ["Bronzebeard"] = "Iccba-AeriePeak",
+    ["Blade'sEdge"] = "Iccba-AeriePeak",
+    ["Vek'nilash"] = "Iccba-AeriePeak",
+    ["Eonar"] = "Iccba-AeriePeak",
+
+    ["Agamaggan"] = "Iccba-Agamaggan",
+    ["Emeriss"] = "Iccba-Agamaggan",
+    ["Twilight'sHammer"] = "Iccba-Agamaggan",
+    ["Bloodscalp"] = "Iccba-Agamaggan",
+    ["Crushridge"] = "Iccba-Agamaggan",
+    ["Hakkar"] = "Iccba-Agamaggan",
+
+    ["Aggramar"] = "Iccba-Aggramar",
+    ["Hellscream"] = "Iccba-Aggramar",
+
+    ["Alexstrasza"] = "Iccba-Alexstrasza",
+    ["Nethersturm"] = "Iccba-Alexstrasza",
+    ["Madmortem"] = "Iccba-Alexstrasza",
+    ["Proudmoore"] = "Iccba-Alexstrasza",
+
+    ["Alleria"] = "Iccba-Alleria",
+    ["Rexxar"] = "Iccba-Alleria",
+
+    ["Alonsus"] = "Iccba-Alonsus",
+    ["KulTiras"] = "Iccba-Alonsus",
+    ["Anachronos"] = "Iccba-Alonsus",
+
+    ["Aman'thul"] = "Iccba-Aman'thul",
+    ["Anub'arak"] = "Iccba-Aman'thul",
+    ["Zuluhed"] = "Iccba-Aman'thul",
+    ["Nazjatar"] = "Iccba-Aman'thul",
+    ["Dalvengyr"] = "Iccba-Aman'thul",
+    ["Frostmourne"] = "Iccba-Aman'thul",
+
+    ["Antonidas"] = "Iccba-Antonidas",
+
+    ["Arathi"] = "Iccba-Arathi",
+    ["Templenoir"] = "Iccba-Arathi",
+    ["Illidan"] = "Iccba-Arathi",
+    ["Naxxramas"] = "Iccba-Arathi",
+
+    ["Archimonde"] = "Iccba-Archimonde",
+
+    ["Area52"] = "Iccba-Area52",
+    ["Sen'jin"] = "Iccba-Area52",
+    ["Un'Goro"] = "Iccba-Area52",
+
+    ["Nagrand"] = "Iccba-Nagrand",
+    ["Runetotem"] = "Iccba-Nagrand",
+    ["Kilrogg"] = "Iccba-Nagrand",
+    ["Arathor"] = "Iccba-Nagrand",
+    ["Hellfire"] = "Iccba-Nagrand",
+
+    ["ArgentDawn"] = "Iccba-ArgentDawn",
+
+    ["Arthas"] = "Iccba-Arthas",
+    ["Vek'lor"] = "Iccba-Arthas",
+    ["Kel'Thuzad"] = "Iccba-Arthas",
+    ["Wrathbringer"] = "Iccba-Arthas",
+    ["Blutkessel"] = "Iccba-Arthas",
+    ["Durotan"] = "Iccba-Arthas",
+    ["Tirion"] = "Iccba-Arthas",
+
+    ["Aszune"] = "Iccba-Aszune",
+    ["Shadowsong"] = "Iccba-Aszune",
+
+    ["Baelgun"] = "Iccba-Baelgun",
+    ["Lothar"] = "Iccba-Baelgun",
+    ["Azshara"] = "Iccba-Baelgun",
+    ["Krag'jin"] = "Iccba-Baelgun",
+
+    ["Balnazzar"] = "Iccba-Balnazzar",
+    ["Boulderfist"] = "Iccba-Balnazzar",
+    ["Trollbane"] = "Iccba-Balnazzar",
+    ["LaughingSkull"] = "Iccba-Balnazzar",
+    ["Daggerspine"] = "Iccba-Balnazzar",
+    ["Ahn'Qiraj"] = "Iccba-Balnazzar",
+    ["Talnivarr"] = "Iccba-Balnazzar",
+    ["ShatteredHalls"] = "Iccba-Balnazzar",
+    ["Sunstrider"] = "Iccba-Balnazzar",
+    ["Chromaggus"] = "Iccba-Balnazzar",
+
+    ["Blackhand"] = "Iccba-Blackhand",
+    ["Mal'Ganis"] = "Iccba-Blackhand",
+    ["Taerar"] = "Iccba-Blackhand",
+    ["Echsenkessel"] = "Iccba-Blackhand",
+
+    ["Blackmoore"] = "Iccba-Blackmoore",
+    ["Lordaeron"] = "Iccba-Blackmoore",
+    ["Tichondrius"] = "Iccba-Blackmoore",
+
+    ["Blackrock"] = "Iccba-Blackrock",
+
+    ["Bloodfeather"] = "Iccba-Bloodfeather",
+    ["BurningSteppes"] = "Iccba-Bloodfeather",
+    ["ShatteredHand"] = "Iccba-Bloodfeather",
+    ["Kor'gall"] = "Iccba-Bloodfeather",
+    ["Executus"] = "Iccba-Bloodfeather",
+    ["Darkspear"] = "Iccba-Bloodfeather",
+    ["Saurfang"] = "Iccba-Bloodfeather",
+    ["Terokkar"] = "Iccba-Bloodfeather",
 
-    ["Alonsus"] = "Proalibank-Alonsus",
-    ["KulTiras"] = "Proalibank-Alonsus",
-    ["Anachronos"] = "Proalibank-Alonsus",
+    ["BurningLegion"] = "Iccba-BurningLegion",
+    ["Xavius"] = "Iccba-BurningLegion",
+    ["Al'Akir"] = "Iccba-BurningLegion",
+    ["Skullcrusher"] = "Iccba-BurningLegion",
 
-    ["Azuremyst"] = "Proalibank-Azuremyst",
-    ["Stormrage"] = "Proalibank-Azuremyst",
+    ["ChamberofAspects"] = "Iccba-ChamberofAspects",
 
-    ["Auchindoun"] = "Proalibank-Auchindoun",
-    ["Jaedenar"] = "Proalibank-Auchindoun",
-    ["Dunemaul"] = "Proalibank-Auchindoun",
+    ["Dalaran"] = "Iccba-Dalaran",
+    ["MarécagedeZangar"] = "Iccba-Dalaran",
+    ["Sinstralis"] = "Iccba-Dalaran",
+    ["Eldre'Thalas"] = "Iccba-Dalaran",
+    ["Cho'gall"] = "Iccba-Dalaran",
+
+    ["DasKonsortium"] = "Iccba-DasKonsortium",
+    ["KultderVerdammten"] = "Iccba-DasKonsortium",
+    ["DieTodeskrallen"] = "Iccba-DasKonsortium",
+    ["DieArguswacht"] = "Iccba-DasKonsortium",
+    ["DerabyssischeRat"] = "Iccba-DasKonsortium",
+    ["DasSyndikat"] = "Iccba-DasKonsortium",
+    ["DieSilberneHand"] = "Iccba-DasKonsortium",
+    ["DieewigeWacht"] = "Iccba-DasKonsortium",
 
-    ["Balnazzar"] = "Proalibank-Balnazzar",
-    ["Trollbane"] = "Proalibank-Balnazzar",
-    ["Talnivarr"] = "Proalibank-Balnazzar",
-    ["Sunstrider"] = "Proalibank-Balnazzar",
-    ["ShatteredHalls"] = "Proalibank-Balnazzar",
-    ["LaughingSkull"] = "Proalibank-Balnazzar",
-    ["Daggerspine"] = "Proalibank-Balnazzar",
-    ["Chromaggus"] = "Proalibank-Balnazzar",
-    ["Boulderfist"] = "Proalibank-Balnazzar",
-    ["Ahn'Qiraj"] = "Proalibank-Balnazzar",
+    ["Deathwing"] = "Iccba-Deathwing",
+    ["TheMaelstrom"] = "Iccba-Deathwing",
+    ["Lightning'sBlade"] = "Iccba-Deathwing",
+    ["Karazhan"] = "Iccba-Deathwing",
+    ["Dragonblight"] = "Iccba-Deathwing",
+    ["Ghostlands"] = "Iccba-Deathwing",
 
-    ["Bloodfeather"] = "Proalibank-Bloodfeather",
-    ["ShatteredHand"] = "Proalibank-Bloodfeather",
-    ["Kor'gall"] = "Proalibank-Bloodfeather",
-    ["Executus"] = "Proalibank-Bloodfeather",
-    ["BurningSteppes"] = "Proalibank-Bloodfeather",
+    ["DefiasBrotherhood"] = "Iccba-DefiasBrotherhood",
+    ["TheVentureCo"] = "Iccba-DefiasBrotherhood",
+    ["Sporeggar"] = "Iccba-DefiasBrotherhood",
+    ["ScarshieldLegion"] = "Iccba-DefiasBrotherhood",
+    ["Ravenholdt"] = "Iccba-DefiasBrotherhood",
+    ["DarkmoonFaire"] = "Iccba-DefiasBrotherhood",
+    ["EarthenRing"] = "Iccba-DefiasBrotherhood",
 
-    ["DarkmoonFaire"] = "Proalibank-DarkmoonFaire",
-    ["EarthenRing"] = "Proalibank-DarkmoonFaire",
+    ["Destromath"] = "Iccba-Destromath",
+    ["Nera'thor"] = "Iccba-Destromath",
+    ["Nefarian"] = "Iccba-Destromath",
+    ["Mannoroth"] = "Iccba-Destromath",
+    ["Gorgonnash"] = "Iccba-Destromath",
+    ["Gilneas"] = "Iccba-Destromath",
+    ["Ulduar"] = "Iccba-Destromath",
 
-    ["Darksorrow"] = "Proalibank-Darksorrow",
-    ["Neptulon"] = "Proalibank-Darksorrow",
-    ["Genjuros"] = "Proalibank-Darksorrow",
+    ["DieAldor"] = "Iccba-DieAldor",
 
-    ["Dragonblight"] = "Proalibank-Dragonblight",
-    ["Ghostlands"] = "Proalibank-Dragonblight",
+    ["DieNachtwache"] = "Iccba-DieNachtwache",
+    ["Forscherliga"] = "Iccba-DieNachtwache",
+    ["ZirkeldesCenarius"] = "Iccba-DieNachtwache",
+    ["Todeswache"] = "Iccba-DieNachtwache",
+    ["DerMithrilorden"] = "Iccba-DieNachtwache",
+    ["DerRatvonDalaran"] = "Iccba-DieNachtwache",
 
-    ["Darkspear"] = "Proalibank-Darkspear",
-    ["Terokkar"] = "Proalibank-Darkspear",
-    ["Saurfang"] = "Proalibank-Darkspear",
+    ["Doomhammer"] = "Iccba-Doomhammer",
+    ["Turalyon"] = "Iccba-Doomhammer",
 
-    ["Deathwing"] = "Proalibank-Deathwing",
-    ["TheMaelstrom"] = "Proalibank-Deathwing",
-    ["Lightning'sBlade"] = "Proalibank-Deathwing",
-    ["Karazhan"] = "Proalibank-Deathwing",
+    ["Draenor"] = "Iccba-Draenor",
 
-    ["DieAldor"] = "Proalibank-DieAldor",
+    ["Drak'thul"] = "Iccba-Drak'thul",
+    ["BurningBlade"] = "Iccba-Drak'thul",
 
-    ["DunMorogh"] = "Proalibank-DunMorogh",
-    ["Norgannon"] = "Proalibank-DunMorogh",
+    ["Drek'Thar"] = "Iccba-Drek'Thar",
+    ["Uldaman"] = "Iccba-Drek'Thar",
+    ["Eitrigg"] = "Iccba-Drek'Thar",
+    ["Krasus"] = "Iccba-Drek'Thar",
 
-    ["Eredar"] = "Proalibank-Eredar",
+    ["DunModr"] = "Iccba-DunModr",
+    ["C'Thun"] = "Iccba-DunModr",
 
-    ["Frostwolf"] = "Proalibank-Frostwolf",
+    ["DunMorogh"] = "Iccba-DunMorogh",
+    ["Norgannon"] = "Iccba-DunMorogh",
 
-    ["Gilneas"] = "Proalibank-Gilneas",
-    ["Ulduar"] = "Proalibank-Gilneas",
+    ["Elune"] = "Iccba-Elune",
+    ["Varimathras"] = "Iccba-Elune",
 
-    ["KhazModan"] = "Proalibank-KhazModan",
+    ["EmeraldDream"] = "Iccba-EmeraldDream",
+    ["Terenas"] = "Iccba-EmeraldDream",
 
-    ["Kargath"] = "Proalibank-Kargath",
-    ["Ambossar"] = "Proalibank-Kargath",
+    ["Eredar"] = "Iccba-Eredar",
 
-    ["KirinTor"] = "Proalibank-KirinTor",
+    ["Exodar"] = "Iccba-Exodar",
+    ["Minahonda"] = "Iccba-Exodar",
 
-    ["Lightbringer"] = "Proalibank-Lightbringer",
-    ["Mazrigos"] = "Proalibank-Lightbringer",
+    ["Frostwolf"] = "Iccba-Frostwolf",
 
-    ["LesSentinelles"] = "Proalibank-LesSentinelles",
-    ["LesClairvoyants"] = "Proalibank-LesSentinelles",
-    ["ConfrérieduThorium"] = "Proalibank-LesSentinelles",
+    ["GrimBatol"] = "Iccba-GrimBatol",
+    ["Aggra(Português)"] = "Iccba-GrimBatol",
+    ["Frostmane"] = "Iccba-GrimBatol",
 
-    ["Madmortem"] = "Proalibank-Madmortem",
-    ["Proudmoore"] = "Proalibank-Madmortem",
 
-    ["Malfurion"] = "Proalibank-Malfurion",
-    ["Malygos"] = "Proalibank-Malfurion",
+    ["Hyjal"] = "Iccba-Hyjal",
 
-    ["Mal'Ganis"] = "Proalibank-Mal'Ganis",
-    ["Taerar"] = "Proalibank-Mal'Ganis",
-    ["Echsenkessel"] = "Proalibank-Mal'Ganis",
+    ["Kazzak"] = "Iccba-Kazzak",
 
-    ["Malorne"] = "Proalibank-Malorne",
-    ["Ysera"] = "Proalibank-Malorne",
+    ["Khadgar"] = "Iccba-Khadgar",
+    ["Bloodhoof"] = "Iccba-Khadgar",
 
-    ["Moonglade"] = "Proalibank-Moonglade",
-    ["SteamwheedleCartel"] = "Proalibank-Moonglade",
-    ["TheSha'tar"] = "Proalibank-Moonglade",
+    ["Khaz'goroth"] = "Iccba-Khaz'goroth",
+    ["Arygos"] = "Iccba-Khaz'goroth",
 
-    ["Nathrezim"] = "Proalibank-Nathrezim",
-    ["Rajaxx"] = "Proalibank-Nathrezim",
-    ["Kil'jaeden"] = "Proalibank-Nathrezim",
-    ["Gul'dan"] = "Proalibank-Nathrezim",
-    ["FestungderStürme"] = "Proalibank-Nathrezim",
-    ["Anetheron"] = "Proalibank-Nathrezim",
+    ["KhazModan"] = "Iccba-KhazModan",
 
-    ["Nemesis"] = "Proalibank-Nemesis",
+    ["KirinTor"] = "Iccba-KirinTor",
+    ["ConseildesOmbres"] = "Iccba-KirinTor",
+    ["CultedelaRivenoire"] = "Iccba-KirinTor",
+    ["LaCroisadeécarlate"] = "Iccba-KirinTor",
+    ["LesClairvoyants"] = "Iccba-KirinTor",
+    ["LesSentinelles"] = "Iccba-KirinTor",
+    ["ConfrérieduThorium"] = "Iccba-KirinTor",
 
-    ["Onyxia"] = "Proalibank-Onyxia",
-    ["Theradras"] = "Proalibank-Onyxia",
-    ["Terrordar"] = "Proalibank-Onyxia",
-    ["Mug'thol"] = "Proalibank-Onyxia",
-    ["Dethecus"] = "Proalibank-Onyxia",
+    ["Lightbringer"] = "Iccba-Lightbringer",
+    ["Mazrigos"] = "Iccba-Lightbringer",
 
-    ["Perenolde"] = "Proalibank-Perenolde",
-    ["Teldrassil"] = "Proalibank-Perenolde",
+    ["Magtheridon"] = "Iccba-Magtheridon",
 
-    ["Pozzodell'Eternità"] = "Proalibank-Pozzodell'Eternità",
+    ["Malfurion"] = "Iccba-Malfurion",
+    ["Malygos"] = "Iccba-Malfurion",
 
-    ["Sargeras"] = "Proalibank-Sargeras",
-    ["Ner'zhul"] = "Proalibank-Sargeras",
-    ["Garona"] = "Proalibank-Sargeras",
+    ["Malorne"] = "Iccba-Malorne",
+    ["Ysera"] = "Iccba-Malorne",
 
-    ["Tyrande"] = "Proalibank-Tyrande",
-    ["LosErrantes"] = "Proalibank-Tyrande",
-    ["ColinasPardas"] = "Proalibank-Tyrande",
+    ["Medivh"] = "Iccba-Medivh",
+    ["Suramar"] = "Iccba-Medivh",
 
-    ["Vol'jin"] = "Proalibank-Vol'jin",
-    ["Chantséternels"] = "Proalibank-Vol'jin",
+    ["Moonglade"] = "Iccba-Moonglade",
+    ["TheSha'tar"] = "Iccba-Moonglade",
+    ["SteamwheedleCartel"] = "Iccba-Moonglade",
 
-    ["Xavius"] = "Proalibank-Xavius",
-    ["Skullcrusher"] = "Proalibank-Xavius",
-    ["Al'Akir"] = "Proalibank-Xavius",
+    ["Nathrezim"] = "Iccba-Nathrezim",
+    ["Anetheron"] = "Iccba-Nathrezim",
+    ["FestungderStürme"] = "Iccba-Nathrezim",
+    ["Gul'dan"] = "Iccba-Nathrezim",
+    ["Kil'jaeden"] = "Iccba-Nathrezim",
+    ["Rajaxx"] = "Iccba-Nathrezim",
 
-    ["Aegwynn"] = "Proalibank-Aegwynn",
+    ["Nemesis"] = "Iccba-Nemesis",
 
-    ["AeriePeak"] = "Proalibank-AeriePeak",
-    ["Bronzebeard"] = "Proalibank-AeriePeak",
+    ["Nordrassil"] = "Iccba-Nordrassil",
+    ["BronzeDragonflight"] = "Iccba-Nordrassil",
 
-    ["Agamaggan"] = "Proalibank-Agamaggan",
-    ["Twilight'sHammer"] = "Proalibank-Agamaggan",
-    ["Hakkar"] = "Proalibank-Agamaggan",
-    ["Emeriss"] = "Proalibank-Agamaggan",
-    ["Crushridge"] = "Proalibank-Agamaggan",
-    ["Bloodscalp"] = "Proalibank-Agamaggan",
-    
-    ["Aggra(Português)"] = "Proalibank-Aggra(Português)",
-    ["GrimBatol"] = "Proalibank-Aggra(Português)",
+    ["Onyxia"] = "Iccba-Onyxia",
+    ["Terrordar"] = "Iccba-Onyxia",
+    ["Theradras"] = "Iccba-Onyxia",
+    ["Mug'thol"] = "Iccba-Onyxia",
+    ["Dethecus"] = "Iccba-Onyxia",
 
-    ["Alexstrasza"] = "Proalibank-Alexstrasza",
-    ["Nethersturm"] = "Proalibank-Alexstrasza",
+    ["Outland"] = "Iccba-Outland",
 
-    ["Alleria"] = "Proalibank-Alleria",
-    ["Rexxar"] = "Proalibank-Alleria",
+    ["Perenolde"] = "Iccba-Perenolde",
+    ["Teldrassil"] = "Iccba-Perenolde",
+    ["Nozdormu"] = "Iccba-Nozdormu",
+    ["Shattrath"] = "Iccba-Nozdormu",
+    ["Garrosh"] = "Iccba-Nozdormu",
 
-    ["Aman'thul"] = "Proalibank-Aman'thul",
+    ["Pozzodell'Eternità"] = "Iccba-Pozzodell'Eternità",
 
-    ["Antonidas"] = "Proalibank-Antonidas",
+    ["Quel'Thalas"] = "Iccba-Quel'Thalas",
+    ["AzjolNerub"] = "Iccba-Quel'Thalas",
 
-    ["Anub'arak"] = "Proalibank-Anub'arak",
-    ["Zuluhed"] = "Proalibank-Anub'arak",
-    ["Nazjatar"] = "Proalibank-Anub'arak",
-    ["Frostmourne"] = "Proalibank-Anub'arak",
-    ["Dalvengyr"] = "Proalibank-Anub'arak",
+    ["Ragnaros"] = "Iccba-Ragnaros",
 
-    ["Archimonde"] = "Proalibank-Archimonde",
+    ["Rashgarroth"] = "Iccba-Rashgarroth",
+    ["Arakarahm"] = "Iccba-Rashgarroth",
+    ["Kael'thas"] = "Iccba-Rashgarroth",
+    ["Throk'Feroth"] = "Iccba-Rashgarroth",
 
-    ["ArgentDawn"] = "Proalibank-ArgentDawn",
+    ["Ravencrest"] = "Iccba-Ravencrest",
 
-    ["Arthas"] = "Proalibank-Arthas",
-    ["Vek'lor"] = "Proalibank-Arthas",
-    ["Wrathbringer"] = "Proalibank-Arthas",
-    ["Kel'Thuzad"] = "Proalibank-Arthas",
-    ["Blutkessel"] = "Proalibank-Arthas",
+    ["Sanguino"] = "Iccba-Sanguino",
+    ["Zul'jin"] = "Iccba-Sanguino",
+    ["Uldum"] = "Iccba-Sanguino",
+    ["Shen'dralar"] = "Iccba-Sanguino",
 
-    ["Aszune"] = "Proalibank-Aszune",
-    ["Shadowsong"] = "Proalibank-Aszune",
+    ["Sargeras"] = "Iccba-Sargeras",
+    ["Ner'zhul"] = "Iccba-Sargeras",
+    ["Garona"] = "Iccba-Sargeras",
 
-    ["Blackhand"] = "Proalibank-Blackhand",
+    ["Silvermoon"] = "Iccba-Silvermoon",
 
-    ["Blackmoore"] = "Proalibank-Blackmoore",
+    ["Stormrage"] = "Iccba-Stormrage",
+    ["Azuremyst"] = "Iccba-Stormrage",
 
-    ["Blackrock"] = "Proalibank-Blackrock",
+    ["Stormreaver"] = "Iccba-Stormreaver",
+    ["Vashj"] = "Iccba-Stormreaver",
+    ["Spinebreaker"] = "Iccba-Stormreaver",
+    ["Haomarush"] = "Iccba-Stormreaver",
+    ["Dragonmaw"] = "Iccba-Stormreaver",
 
-    ["Blade'sEdge"] = "Proalibank-Blade'sEdge",
-    ["Vek'nilash"] = "Proalibank-Blade'sEdge",
-    ["Eonar"] = "Proalibank-Blade'sEdge",
+    ["Stormscale"] = "Iccba-Stormscale",
 
-    ["BurningLegion"] = "Proalibank-BurningLegion",
+    ["Sylvanas"] = "Iccba-Sylvanas",
+    ["Auchindoun"] = "Iccba-Sylvanas",
+    ["Jaedenar"] = "Iccba-Sylvanas",
+    ["Dunemaul"] = "Iccba-Sylvanas",
 
-    ["ChamberofAspects"] = "Proalibank-ChamberofAspects",
+    ["TarrenMill"] = "Iccba-TarrenMill",
+    ["Dentarg"] = "Iccba-TarrenMill",   
 
-    ["Dalaran"] = "Proalibank-Dalaran",
-    ["MarécagedeZangar"] = "Proalibank-Dalaran",
+    ["Thrall"] = "Iccba-Thrall",
+    ["Kargath"] = "Iccba-Thrall",
+    ["Ambossar"] = "Iccba-Thrall",
 
-    ["DefiasBrotherhood"] = "Proalibank-DefiasBrotherhood",
-    ["TheVentureCo"] = "Proalibank-DefiasBrotherhood",
-    ["Sporeggar"] = "Proalibank-DefiasBrotherhood",
-    ["ScarshieldLegion"] = "Proalibank-DefiasBrotherhood",
-    ["Ravenholdt"] = "Proalibank-DefiasBrotherhood",
+    ["TwistingNether"] = "Iccba-TwistingNether",
 
-    ["Doomhammer"] = "Proalibank-Doomhammer",
-    ["Turalyon"] = "Proalibank-Doomhammer",
+    ["Tyrande"] = "Iccba-Tyrande",
+    ["LosErrantes"] = "Iccba-Tyrande",
+    ["ColinasPardas"] = "Iccba-Tyrande",
 
-    ["Draenor"] = "Proalibank-Draenor",
+    ["Vol'jin"] = "Iccba-Vol'jin",
+    ["Chantséternels"] = "Iccba-Vol'jin",
 
-    ["Drak'thul"] = "Proalibank-Drak'thul",
-    ["BurningBlade"] = "Proalibank-Drak'thul",
+    ["Wildhammer"] = "Iccba-Wildhammer",
+    ["Thunderhorn"] = "Iccba-Wildhammer",
 
-    ["DunModr"] = "Proalibank-DunModr",
+    ["Ysondre"] = "Iccba-Ysondre",
 
-    ["Elune"] = "Proalibank-Elune",
-    ["Varimathras"] = "Proalibank-Elune",
+    ["Zenedar"] = "Iccba-Zenedar",
+    ["Darksorrow"] = "Iccba-Zenedar",
+    ["Neptulon"] = "Iccba-Zenedar",
+    ["Genjuros"] = "Iccba-Zenedar",
+    ["Bladefist"] = "Iccba-Zenedar",
+    ["Frostwhisper"] = "Iccba-Zenedar", 
 
-    ["EmeraldDream"] = "Proalibank-EmeraldDream",
-    ["Terenas"] = "Proalibank-EmeraldDream",
-
-    ["Frostmane"] = "Proalibank-Frostmane",
-
-    ["Frostwhisper"] = "Proalibank-Frostwhisper",
-    ["Bladefist"] = "Proalibank-Frostwhisper",
-    ["Zenedar"] = "Proalibank-Frostwhisper",
-
-    ["Hellfire"] = "Proalibank-Hellfire",
-    ["Arathor"] = "Proalibank-Hellfire",
-
-    ["Hyjal"] = "Proalibank-Hyjal",
-
-    ["Kazzak"] = "Proalibank-Kazzak",
-
-    ["Khadgar"] = "Proalibank-Khadgar",
-    ["Bloodhoof"] = "Proalibank-Khadgar",
-
-    ["Magtheridon"] = "Proalibank-Magtheridon",
-
-    ["Nagrand"] = "Proalibank-Nagrand",
-    ["Runetotem"] = "Proalibank-Nagrand",
-    ["Kilrogg"] = "Proalibank-Nagrand",
-
-    ["Outland"] = "Proalibank-Outland",
-
-    ["Quel'Thalas"] = "Proalibank-Quel'Thalas",
-    ["AzjolNerub"] = "Proalibank-Quel'Thalas",
-
-    ["Ragnaros"] = "Proalibank-Ragnaros",
-
-    ["Ravencrest"] = "Proalibank-Ravencrest",
-
-    ["Sanguino"] = "Proalibank-Sanguino",
-    ["Zul'jin"] = "Proalibank-Sanguino",
-    ["Uldum"] = "Proalibank-Sanguino",
-    ["Shen'dralar"] = "Proalibank-Sanguino",
-
-    ["Shattrath"] = "Proalibank-Shattrath",
-    ["Nozdormu"] = "Proalibank-Shattrath",
-    ["Garrosh"] = "Proalibank-Shattrath",
-
-    ["Silvermoon"] = "Proalibank-Silvermoon",
-
-    ["Stormreaver"] = "Proalibank-Stormreaver",
-    ["Vashj"] = "Proalibank-Stormreaver",
-    ["Spinebreaker"] = "Proalibank-Stormreaver",
-    ["Haomarush"] = "Proalibank-Stormreaver",
-    ["Dragonmaw"] = "Proalibank-Stormreaver",
-
-    ["Stormscale"] = "Proalibank-Stormscale",
-
-    ["Sylvanas"] = "Proalibank-Sylvanas",
-
-    ["TarrenMill"] = "Proalibank-TarrenMill",
-    ["Dentarg"] = "Proalibank-TarrenMill",
-
-    ["Thrall"] = "Proalibank-Thrall",
-
-    ["TwistingNether"] = "Proalibank-TwistingNether",
-
-    ["Aggramar"] = "NOBANK",    
-    ["Arakarahm"] = "NOBANK",
-    ["Area52"] = "NOBANK",
-    ["Arygos"] = "NOBANK",
-    ["Azshara"] = "NOBANK",
-    ["Baelgun"] = "NOBANK",
-    ["BronzeDragonflight"] = "NOBANK",
-    ["C'Thun"] = "NOBANK",
-    ["Cho'gall"] = "NOBANK",
-    ["ConseildesOmbres"] = "NOBANK",
-    ["CultedelaRivenoire"] = "NOBANK",
-    ["DasKonsortium"] = "NOBANK",
-    ["DasSyndikat"] = "NOBANK",
-    ["DerabyssischeRat"] = "NOBANK",
-    ["DerMithrilorden"] = "NOBANK",
-    ["DerRatvonDalaran"] = "NOBANK",
-    ["Destromath"] = "NOBANK",
-    ["DieArguswacht"] = "NOBANK",
-    ["DieewigeWacht"] = "NOBANK",
-    ["DieNachtwache"] = "NOBANK",
-    ["DieSilberneHand"] = "NOBANK",
-    ["DieTodeskrallen"] = "NOBANK",
-    ["Drek'Thar"] = "NOBANK",
-    ["Durotan"] = "NOBANK",
-    ["Eitrigg"] = "NOBANK",
-    ["Eldre'Thalas"] = "NOBANK",
-    ["Exodar"] = "NOBANK",
-    ["Forscherliga"] = "NOBANK",
-    ["Gorgonnash"] = "NOBANK",
-    ["Hellscream"] = "NOBANK",
-    ["Kael'thas"] = "NOBANK",
-    ["Khaz'goroth"] = "NOBANK",
-    ["Krag'jin"] = "NOBANK",
-    ["Krasus"] = "NOBANK",
-    ["KultderVerdammten"] = "NOBANK",
-    ["LaCroisadeécarlate"] = "NOBANK",
-    ["Lordaeron"] = "NOBANK",
-    ["Lothar"] = "NOBANK",
-    ["Mannoroth"] = "NOBANK",
-    ["Medivh"] = "NOBANK",
-    ["Minahonda"] = "NOBANK",
-    ["Nefarian"] = "NOBANK",
-    ["Nera'thor"] = "NOBANK",
-    ["Nordrassil"] = "NOBANK",
-    ["Rashgarroth"] = "NOBANK",
-    ["Sen'jin"] = "NOBANK",
-    ["Sinstralis"] = "NOBANK",
-    ["Suramar"] = "NOBANK",
-    ["Throk'Feroth"] = "NOBANK",
-    ["Thunderhorn"] = "NOBANK",
-    ["Tichondrius"] = "NOBANK",
-    ["Tirion"] = "NOBANK",
-    ["Todeswache"] = "NOBANK",
-    ["Uldaman"] = "NOBANK",
-    ["Un'Goro"] = "NOBANK",
-    ["Wildhammer"] = "NOBANK",
-    ["Ysondre"] = "NOBANK",
-    ["ZirkeldesCenarius"] = "NOBANK",
+    ["Anasterian"] = "DO NOT USE",--ptr
 }
+
+
 
 --saved vars
 local defaultSavedVars = {
